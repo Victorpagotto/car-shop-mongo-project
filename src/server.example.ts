@@ -1,3 +1,4 @@
+// Iniciando projeto.
 // import 'dotenv/config';
 // import app from './app';
 // import connectToDatabase from './Models/Connection';
