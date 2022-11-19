@@ -2,12 +2,12 @@ import { NextFunction, Request, Response } from 'express';
 import Motorcycle from '../Domains/Motorcycle';
 import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorcycleService from '../Services/MotorcycleService';
-import responseHandler, { IResponse } from '../Utils/responseHandler';
+import ResponseHandler, { IResponse } from '../Utils/responseHandler';
 import VehicleController from './VehicleController';
 
 export default class MotorcycleController extends VehicleController<IMotorcycle, Motorcycle> {
   constructor(req: Request, res: Response, next: NextFunction) {
-    const service = new MotorcycleService(responseHandler);
+    const service = new MotorcycleService(ResponseHandler);
     super(req, res, next, service);
   }
 
