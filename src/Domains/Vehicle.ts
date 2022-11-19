@@ -6,7 +6,7 @@ export default abstract class Vehicle {
   protected color: string;
   protected status: boolean;
   protected buyValue: number;
-  protected id: string;
+  protected id: string | undefined;
 
   constructor(
     vehicle: IVehicle,

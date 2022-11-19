@@ -11,7 +11,7 @@ export default abstract class AbstractODM<T> {
     this.dbModel = models[this.dbModelName] || model(this.dbModelName, this.schema);
   }
 
-  public async create(object: T): Promise<HydratedDocument<T>> {
+  public async create(object: Partial<T>): Promise<HydratedDocument<T>> {
     return this.dbModel.create({ ...object });
   }
 
@@ -24,7 +24,7 @@ export default abstract class AbstractODM<T> {
     return !!result.deletedCount;
   }
 
-  public async update(id: string, info: T): Promise<HydratedDocument<T> | null> {
+  public async update(id: string, info: Partial<T>): Promise<HydratedDocument<T> | null> {
     return this.dbModel.findOneAndUpdate({ id }, { info }, { upsert: false });
   }
 }

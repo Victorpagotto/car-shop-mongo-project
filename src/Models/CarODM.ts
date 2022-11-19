@@ -5,7 +5,7 @@ import AbstractODM from './AbstractODM';
 export default class CarODM extends AbstractODM<ICar> {
   constructor() {
     const modelSchema = new Schema<ICar>({
-      id: { type: String, required: true },
+      id: { type: String, required: false },
       model: { type: String, required: true },
       year: { type: Number, required: true },
       color: { type: String, required: true },

@@ -7,4 +7,6 @@ interface IMotorcycle extends IVehicle {
   engineCapacity: number;
 }
 
-export { IMotorcycle, CategoryTypes };
+export { CategoryTypes };
+
+export default IMotorcycle;
