@@ -2,8 +2,8 @@ import IMotorcycle, { CategoryTypes } from '../Interfaces/IMotorcycle';
 import Vehicle from './Vehicle';
 
 export default class Motorcycle extends Vehicle {
-  category: CategoryTypes;
-  engineCapacity: number;
+  private category: CategoryTypes;
+  private engineCapacity: number;
 
   constructor(
     motorcycle: IMotorcycle,

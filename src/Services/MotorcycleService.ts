@@ -3,17 +3,17 @@ import Motorcycle from '../Domains/Motorcycle';
 import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorocycleODM from '../Models/MotorcycleODM';
 import { IResponseHandler } from '../Utils/responseHandler';
+import VehicleService from './VehicleService';
 
-export default class CarService {
-  private model: MotorocycleODM;
-  private handler: IResponseHandler;
-
+export default class MotorcycleService extends VehicleService<IMotorcycle, Motorcycle> {
   constructor(handler: IResponseHandler) {
-    this.model = new MotorocycleODM();
-    this.handler = handler;
+    const dbModel = new MotorocycleODM();
+    const idMessage = 'Invalid mongo id';
+    const notFoundMessage = 'Motorcycle not found';
+    super(handler, dbModel, idMessage, notFoundMessage);
   }
 
-  private createDomain(motorcycle: HydratedDocument<IMotorcycle> | null): Motorcycle | null {
+  protected createDomain(motorcycle: HydratedDocument<IMotorcycle> | null): Motorcycle | null {
     if (motorcycle) {
       return new Motorcycle({
         id: motorcycle.id || motorcycle._id,
