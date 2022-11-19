@@ -35,7 +35,7 @@ export default class CarService {
     return this.handler.response<Car>('created', result as Car);
   }
 
-  async get(car: Partial<ICar>): Promise<IResponse<Car[] | Car | string>> {
+  async get(car: Partial<ICar>): Promise<IResponse<Car[] | string>> {
     const info: HydratedDocument<ICar>[] = await this.model.get({ ...car });
     const result: Car[] = info.map((carPositiojn: HydratedDocument<ICar>): Car => (
       this.createDomain(carPositiojn) as Car));

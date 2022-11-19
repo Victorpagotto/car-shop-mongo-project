@@ -29,6 +29,6 @@ export default abstract class AbstractODM<T> {
   }
 
   public async getAndUpdate(id: string, info: Partial<T>): Promise<HydratedDocument<T> | null> {
-    return this.dbModel.findByIdAndUpdate(id, { ...info }, { upsert: false });
+    return this.dbModel.findByIdAndUpdate(id, { ...info }, { upsert: false, new: true });
   }
 }
