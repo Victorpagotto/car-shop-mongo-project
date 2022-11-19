@@ -15,8 +15,12 @@ export default abstract class AbstractODM<T> {
     return this.dbModel.create({ ...object });
   }
 
-  public async findAll(): Promise<HydratedDocument<T>[]> {
-    return this.dbModel.find({});
+  public async get(object: Partial<T>): Promise<HydratedDocument<T>[]> {
+    return this.dbModel.find({ ...object });
+  }
+
+  public async getById(id: string): Promise<HydratedDocument<T> | null> {
+    return this.dbModel.findById(id);
   }
 
   public async destroy(id: string): Promise<boolean> {
@@ -24,7 +28,7 @@ export default abstract class AbstractODM<T> {
     return !!result.deletedCount;
   }
 
-  public async update(id: string, info: Partial<T>): Promise<HydratedDocument<T> | null> {
-    return this.dbModel.findOneAndUpdate({ id }, { info }, { upsert: false });
+  public async getAndUpdate(id: string, info: Partial<T>): Promise<HydratedDocument<T> | null> {
+    return this.dbModel.findByIdAndUpdate(id, { ...info }, { upsert: false });
   }
 }

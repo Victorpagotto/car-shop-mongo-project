@@ -5,7 +5,6 @@ import AbstractODM from './AbstractODM';
 export default class MotorocycleODM extends AbstractODM<IMotorcycle> {
   constructor() {
     const modelSchema = new Schema<IMotorcycle>({
-      id: { type: String, required: true },
       model: { type: String, required: true },
       year: { type: Number, required: true },
       color: { type: String, required: true },
@@ -14,7 +13,7 @@ export default class MotorocycleODM extends AbstractODM<IMotorcycle> {
       category: { type: String, required: true },
       engineCapacity: { type: Number, required: true },
     });
-    const dbModelName = 'Car';
+    const dbModelName = 'Motorcycle';
     super(modelSchema, dbModelName);
   }
 }

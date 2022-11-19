@@ -1,3 +1,4 @@
+import { HydratedDocument } from 'mongoose';
 import Motorcycle from '../Domains/Motorcycle';
 import IMotorcycle from '../Interfaces/IMotorcycle';
 import MotorocycleODM from '../Models/MotorcycleODM';
@@ -12,10 +13,10 @@ export default class CarService {
     this.handler = handler;
   }
 
-  private createDomain(motorcycle: IMotorcycle | null): Motorcycle | null {
+  private createDomain(motorcycle: HydratedDocument<IMotorcycle> | null): Motorcycle | null {
     if (motorcycle) {
       return new Motorcycle({
-        id: motorcycle.id,
+        id: motorcycle.id || motorcycle._id,
         model: motorcycle.model,
         year: motorcycle.year,
         color: motorcycle.color,
