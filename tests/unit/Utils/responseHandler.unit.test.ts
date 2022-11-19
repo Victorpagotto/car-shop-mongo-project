@@ -1,51 +1,51 @@
-import * as sinon from 'sinon';
 import * as chai from 'chai';
-import ResponseHandlerAbs, { IAnswer, IResponse, IResponseHandler } from '../utils/responseHandler';
 
-import { Response } from 'superagent';
-import { sign, verify } from 'jsonwebtoken';
-import ResponseHandler, { statusCodes } from '../utils/responseHandler/responseHandler';
-import responseHandler from '../utils/responseHandler';
+import ResponseHandler, { statusCodes } from '../../../src/Utils/responseHandler/responseHandler';
+import { IAnswer, IResponse } from '../../../src/Utils/responseHandler';
 
 const { expect } = chai;
 
-interface testPayload {
+interface TestPayLoad {
   email: string;
   password: string;
 }
 
-describe('Testa o funcionamento do responseHandler.', () => {
-  it('Testa response com payload.', () => {
+describe('Testa o funcionamento do responseHandler.', function () {
+  it('Testa response com payload.', function () {
     const handler = new ResponseHandler(statusCodes);
-    const payload: testPayload = {
+    const payload: TestPayLoad = {
       email: 'email@email.com',
       password: 'mySuperSecret',
-    }
-    const { status, result }: IResponse<testPayload> = handler.response<testPayload>('ok', payload);
+    };
+    const { status, result }: IResponse<TestPayLoad> = handler.response<TestPayLoad>('ok', payload);
     expect(status).to.be.equal(200);
     expect(result).to.be.deep.equal(payload);
-  })
-  it('Testa response com mensagem.', () => {
+  });
+  
+  it('Testa response com mensagem.', function () {
     const handler = new ResponseHandler(statusCodes);
-    const message = 'My super message that no one can see besides my cat.'
+    const message = 'My super message that no one can see besides my cat.';
     const { status, result }: IResponse<string> = handler.response<string>('badRequest', message);
     expect(status).to.be.equal(400);
     expect(result).to.be.deep.equal({ message });
   });
-  it('Testa answer com payload.', () => {
+
+  it('Testa answer com payload.', function () {
     const handler = new ResponseHandler(statusCodes);
-    const payload: testPayload = {
+    const payload: TestPayLoad = {
       email: 'email@email.com',
       password: 'mySuperSecret',
-    }
-    const { status, result, num }: IAnswer<testPayload> = handler.answer<testPayload>('ok', payload);
+    };
+    const { status, result, num }: IAnswer<TestPayLoad> = handler
+      .answer<TestPayLoad>('ok', payload);
     expect(status).to.be.equal('ok');
     expect(result).to.be.deep.equal(payload);
     expect(num).to.be.equal(200);
-  })
-  it('Testa answer com mensagem.', () => {
+  });
+
+  it('Testa answer com mensagem.', function () {
     const handler = new ResponseHandler(statusCodes);
-    const message = 'My super message that no one can see besides my cat.'
+    const message = 'My super message that no one can see besides my cat.';
     const { status, result, num }: IAnswer<string> = handler.answer<string>('badRequest', message);
     expect(status).to.be.equal('badRequest');
     expect(result).to.be.deep.equal({ message });
