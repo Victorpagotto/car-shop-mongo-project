@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { HydratedDocument, Mongoose } from 'mongoose';
+import { HydratedDocument } from 'mongoose';
 import sinon from 'sinon';
 import IMotorcycle from '../../../src/Interfaces/IMotorcycle';
 import MotorcycleODM from '../../../src/Models/MotorcycleODM';
@@ -55,7 +55,6 @@ describe('Testa o service de motocicletas.', function () {
       const motorcycleService = new Motorcycleservice(responseHandler);
       sinon.stub(MotorcycleODM.prototype, 'getAndUpdate')
         .resolves({ ...motorcyclesArrayDB[0] } as never);
-      sinon.stub(Mongoose.prototype, 'isValidObjectId').returns(false);
 
       // Ação.
       const result = await motorcycleService.getAndUpdate(incorrectId, { ...motorcyclesArray[0] });
@@ -70,7 +69,6 @@ describe('Testa o service de motocicletas.', function () {
       const motorcycleService = new Motorcycleservice(responseHandler);
       sinon.stub(MotorcycleODM.prototype, 'getAndUpdate')
         .resolves(null);
-
       // Ação.
       const result = await motorcycleService.getAndUpdate(correctId, { ...motorcyclesArray[0] });
 
@@ -85,7 +83,6 @@ describe('Testa o service de motocicletas.', function () {
       // Cenário.
       const motorcycleService = new Motorcycleservice(responseHandler);
       sinon.stub(MotorcycleODM.prototype, 'destroy').resolves(true);
-
       // Ação.
       const result = await motorcycleService.destroy(correctId);
 
@@ -99,7 +96,6 @@ describe('Testa o service de motocicletas.', function () {
       const motorcycleService = new Motorcycleservice(responseHandler);
       sinon.stub(MotorcycleODM.prototype, 'destroy')
         .resolves(false as never);
-      sinon.stub(Mongoose.prototype, 'isValidObjectId').returns(false);
 
       // Ação.
       const result = await motorcycleService.destroy(incorrectId);
@@ -160,7 +156,6 @@ describe('Testa o service de motocicletas.', function () {
       const motorcycleService = new Motorcycleservice(responseHandler);
       sinon.stub(MotorcycleODM.prototype, 'getById')
         .resolves({ ...motorcyclesArrayDB[1] } as never);
-      sinon.stub(Mongoose.prototype, 'isValidObjectId').returns(false);
 
       // Ação.
       const result = await motorcycleService.getById(incorrectId);
@@ -175,7 +170,7 @@ describe('Testa o service de motocicletas.', function () {
       const motorcycleService = new Motorcycleservice(responseHandler);
       sinon.stub(MotorcycleODM.prototype, 'getById')
         .resolves(null);
-
+      
       // Ação.
       const result = await motorcycleService.getById(correctId);
 

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { HydratedDocument, Mongoose } from 'mongoose';
+import { HydratedDocument } from 'mongoose';
 import sinon from 'sinon';
 import ICar from '../../../src/Interfaces/ICar';
 import CarODM from '../../../src/Models/CarODM';
@@ -35,7 +35,7 @@ describe('Testa o service de carros.', function () {
     });
   });
 
-  describe('Testa o update.', function () {
+  describe('Testa o getAndUpdate.', function () {
     it(SUCESSCASE, async function () {
       // Cenário.
       const carService = new CarService(responseHandler);
@@ -54,7 +54,6 @@ describe('Testa o service de carros.', function () {
       const carService = new CarService(responseHandler);
       sinon.stub(CarODM.prototype, 'getAndUpdate')
         .resolves({ ...carsArrayDB[0] } as never);
-      sinon.stub(Mongoose.prototype, 'isValidObjectId').returns(false);
 
       // Ação.
       const result = await carService.getAndUpdate(incorrectId, { ...carsArray[0] });
@@ -96,7 +95,6 @@ describe('Testa o service de carros.', function () {
       const carService = new CarService(responseHandler);
       sinon.stub(CarODM.prototype, 'destroy')
         .resolves(false as never);
-      sinon.stub(Mongoose.prototype, 'isValidObjectId').returns(false);
 
       // Ação.
       const result = await carService.destroy(incorrectId);
@@ -154,7 +152,6 @@ describe('Testa o service de carros.', function () {
       const carService = new CarService(responseHandler);
       sinon.stub(CarODM.prototype, 'getById')
         .resolves({ ...carsArrayDB[1] } as never);
-      sinon.stub(Mongoose.prototype, 'isValidObjectId').returns(false);
 
       // Ação.
       const result = await carService.getById(incorrectId);
