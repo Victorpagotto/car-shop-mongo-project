@@ -33,7 +33,7 @@ export const updatedCar: ICar = {
 
 export const carsArray: ICar[] = [
   {
-    model: 'Marea Turbo',
+    model: 'Marea Turbo veloz e furioso',
     year: 2002,
     color: 'Black',
     status: true,
@@ -42,7 +42,7 @@ export const carsArray: ICar[] = [
     seatsQty: 5,
   },
   {
-    model: 'Tempra sem Rodas',
+    model: 'Tempra sem Rodas veloz e furioso',
     year: 1995,
     color: 'Black',
     buyValue: 39.000,
@@ -57,13 +57,36 @@ export const carsArrayDB: ICar[] = [
     model: 'Marea Turbo',
     year: 2002,
     color: 'Black',
-    status: true,
+    status: false,
     buyValue: 15.990,
     doorsQty: 4,
     seatsQty: 5,
   },
   {
     id: '634852326b35b59438fbea31',
+    model: 'Tempra sem Rodas',
+    year: 1995,
+    color: 'Black',
+    status: false,
+    buyValue: 39.000,
+    doorsQty: 2,
+    seatsQty: 5,
+  },
+];
+
+export const carsArrayModel = [
+  {
+    _id: '634852326b35b59438fbea2f',
+    model: 'Marea Turbo',
+    year: 2002,
+    color: 'Black',
+    status: true,
+    buyValue: 15.990,
+    doorsQty: 4,
+    seatsQty: 5,
+  },
+  {
+    _id: '634852326b35b59438fbea31',
     model: 'Tempra sem Rodas',
     year: 1995,
     color: 'Black',

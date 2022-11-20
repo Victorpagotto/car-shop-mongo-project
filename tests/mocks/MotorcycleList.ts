@@ -31,7 +31,7 @@ export const updatedMotorcycle: IMotorcycle = {
 
 export const motorcyclesArray: IMotorcycle[] = [
   {
-    model: 'Honda Cb 600f Hornet',
+    model: 'Honda Cb 600f Hornet turbo',
     year: 2005,
     color: 'Yellow',
     status: true,
@@ -40,7 +40,7 @@ export const motorcyclesArray: IMotorcycle[] = [
     engineCapacity: 600,
   },
   {
-    model: 'Honda Cbr 1000rr',
+    model: 'Honda Cbr 1000rr turbo',
     year: 2011,
     color: 'Orange',
     status: true,
@@ -56,13 +56,36 @@ export const motorcyclesArrayDB: IMotorcycle[] = [
     model: 'Honda Cb 600f Hornet',
     year: 2005,
     color: 'Yellow',
-    status: true,
+    status: false,
     buyValue: 30.000,
     category: 'Street',
     engineCapacity: 600,
   },
   {
     id: '634852326b35b59438fbea31',
+    model: 'Honda Cbr 1000rr',
+    year: 2011,
+    color: 'Orange',
+    status: false,
+    buyValue: 59.900,
+    category: 'Street',
+    engineCapacity: 1000,
+  },
+];
+
+export const motorcycleArrayModel = [
+  {
+    _id: '634852326b35b59438fbea2f',
+    model: 'Honda Cb 600f Hornet',
+    year: 2005,
+    color: 'Yellow',
+    status: true,
+    buyValue: 30.000,
+    category: 'Street',
+    engineCapacity: 600,
+  },
+  {
+    _id: '634852326b35b59438fbea31',
     model: 'Honda Cbr 1000rr',
     year: 2011,
     color: 'Orange',
