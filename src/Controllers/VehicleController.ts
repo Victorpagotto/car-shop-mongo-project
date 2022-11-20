@@ -15,13 +15,13 @@ export default abstract class VehicleController<T, C> {
     this.service = service;
   }
 
-  async getById(): Promise<Response> {
+  public async getById(): Promise<Response> {
     const { status, result }: IResponse<C | string> = await this.service
       .getById(this.req.params.id);
     return this.res.status(status).json(result);
   }
 
-  async get(): Promise<Response> {
+  public async get(): Promise<Response> {
     const info = {
       ...this.req.body,
     };
@@ -29,12 +29,18 @@ export default abstract class VehicleController<T, C> {
     return this.res.status(status).json(result);
   }
 
-  async getAndUpdate(): Promise<Response> {
+  public async getAndUpdate(): Promise<Response> {
     const info = {
       ...this.req.body,
     };
     const { status, result }: IResponse<C | string> = await this.service
       .getAndUpdate(this.req.params.id, { ...info });
+    return this.res.status(status).json(result);
+  }
+
+  public async destroy(): Promise<Response> {
+    const { status, result }: IResponse<string | undefined> = await this.service
+      .destroy(this.req.params.id);
     return this.res.status(status).json(result);
   }
 }

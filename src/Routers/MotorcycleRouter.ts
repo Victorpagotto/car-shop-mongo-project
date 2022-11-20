@@ -4,6 +4,8 @@ import MotorcycleController from '../Controllers/MotorcycleController';
 const motorcycleRouter = express.Router();
 
 motorcycleRouter
+  .delete('/:id', (req, res, next) => new MotorcycleController(req, res, next).destroy());
+motorcycleRouter
   .put('/:id', (req, res, next) => new MotorcycleController(req, res, next).getAndUpdate());
 motorcycleRouter
   .get('/:id', (req, res, next) => new MotorcycleController(req, res, next).getById());

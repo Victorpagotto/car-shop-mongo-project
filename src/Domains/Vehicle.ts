@@ -19,47 +19,47 @@ export default abstract class Vehicle {
     this.buyValue = vehicle.buyValue;
   }
 
-  getModel(): string {
+  public getModel(): string {
     return this.model;
   }
 
-  setModel(value: string): boolean {
+  public setModel(value: string): boolean {
     this.model = value;
     return true;
   }
 
-  getYear(): number {
+  public getYear(): number {
     return this.year;
   }
 
-  setYear(value: number): boolean {
+  public setYear(value: number): boolean {
     this.year = value;
     return true;
   }
 
-  getColor(): string {
+  public getColor(): string {
     return this.color;
   }
 
-  setColor(value: string): boolean {
+  public setColor(value: string): boolean {
     this.color = value;
     return true;
   }
 
-  getStatus(): boolean {
+  public getStatus(): boolean {
     return this.status;
   }
 
-  setStatus(value: boolean): boolean {
+  public setStatus(value: boolean): boolean {
     this.status = value;
     return true;
   }
 
-  getBuyValue(): number {
+  public getBuyValue(): number {
     return this.buyValue;
   }
 
-  setBuyValue(value: number): boolean {
+  public setBuyValue(value: number): boolean {
     this.buyValue = value;
     return true;
   }

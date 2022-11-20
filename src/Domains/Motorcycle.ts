@@ -22,20 +22,20 @@ export default class Motorcycle extends Vehicle {
     this.engineCapacity = motorcycle.engineCapacity;
   }
 
-  getCategory(): CategoryTypes {
+  public getCategory(): CategoryTypes {
     return this.category;
   }
 
-  setCategory(value: CategoryTypes): boolean {
+  public setCategory(value: CategoryTypes): boolean {
     this.category = value;
     return true;
   }
 
-  getEngineCapacity(): number {
+  public getEngineCapacity(): number {
     return this.engineCapacity;
   }
 
-  setEngineCapacity(value: number): boolean {
+  public setEngineCapacity(value: number): boolean {
     this.engineCapacity = value;
     return true;
   }

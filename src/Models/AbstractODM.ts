@@ -24,7 +24,7 @@ export default abstract class AbstractODM<T> {
   }
 
   public async destroy(id: string): Promise<boolean> {
-    const result = await this.dbModel.deleteOne({ id });
+    const result = await this.dbModel.deleteOne({ _id: id });
     return !!result.deletedCount;
   }
 
