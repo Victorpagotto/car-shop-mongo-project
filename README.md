@@ -15,7 +15,7 @@
 
 <h3 align="center">Descrição</h3>
 
-<p align="justify">Esta é uma API construída usando como base o mongoDB, utilizando-se de node conectado ao database através da biblioteca mongoose e gerenciando requisições usando express. Toda a aplicação é construída seguindo princípios de orientação a objeto aplicando a eles o princípio SOLID, usando a arquitetura DDD: domain design driven, juntamente com MSC: model, service e controller. A aplicação de todos esses princípios serve para garantir um código mais limpo, simples e funcional, com uso de heranças para diminuir a duplicação de linhas de código, sendo tudo sustentado pelo uso de testes num desenvolvimento TDD através de Chai e Sinon, garantindo a segurança do código.</p>
+<p align="justify">Esta é uma API construída usando como base o mongoDB, utilizando-se de node conectado ao database através da biblioteca mongoose e gerenciando requisições usando express. Toda a aplicação é construída seguindo princípios de orientação a objeto, aplicando a eles o princípio SOLID, usando a arquitetura DDD: domain design driven, juntamente com MSC: model, service e controller. A aplicação de todos esses princípios serve para garantir um código mais limpo, simples e funcional, com uso de heranças para diminuir a duplicação de linhas de código, sendo tudo sustentado pelo uso de testes num desenvolvimento TDD através de Chai e Sinon, garantindo a integridade do código.</p>
 
 -----------------------
 
@@ -35,7 +35,7 @@
 <h2 align="center">English</h2>
 
 
-**Name**: Virtual Smith
+**Name**: Car Shop
 
 **Used Knowledges**: Typescript.
 
@@ -47,7 +47,7 @@
 
 <h3 align="center">Description</h3>
 
-<p align="justify"></p>
+<p align="justify">This is an API built using mongoDB, using mongoose library to connect node to the database and managing requests using express. The entire application is built with object-oriented programming, applying the SOLID principle to it, using the DDD: domain driven design, together with MSC: model, service and controller. Applying all these principles guarantees a cleaner, simpler and more functional code, using inheritance to reduce the duplication code lines, all supported by the use of tests in a TDD development using Chai and Sinon, guaranteeing the integrity of the code.</p>
 
 -----------------------
 
