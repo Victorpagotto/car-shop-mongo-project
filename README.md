@@ -7,7 +7,7 @@
 
 **Conhecimentos Usados**: Typescript.
 
-**Ferramentas usadas**: Node.js, JWT, Express e MongoDB.
+**Ferramentas usadas**: Node.js, Express e MongoDB.
 
 **Número de Pessoas**: 1 (sozinho).
 
@@ -15,7 +15,7 @@
 
 <h3 align="center">Descrição</h3>
 
-<p align="justify"></p>
+<p align="justify">Esta é uma API construída usando como base o mongoDB, utilizando-se de node conectado ao database através da biblioteca mongoose e gerenciando requisições usando express. Toda a aplicação é construída seguindo princípios de orientação a objeto aplicando a eles o princípio SOLID, usando a arquitetura DDD: domain design driven, juntamente com MSC: model, service e controller. A aplicação de todos esses princípios serve para garantir um código mais limpo, simples e funcional, com uso de heranças para diminuir a duplicação de linhas de código, sendo tudo sustentado pelo uso de testes num desenvolvimento TDD através de Chai e Sinon, garantindo a segurança do código.</p>
 
 -----------------------
 
@@ -39,7 +39,7 @@
 
 **Used Knowledges**: Typescript.
 
-**Used Tools**: Node.js, JWT, Express and MongoDB.
+**Used Tools**: Node.js, Express and MongoDB.
 
 **Number of People**: 1 (solo).
 
