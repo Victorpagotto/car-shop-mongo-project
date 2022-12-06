@@ -28,7 +28,7 @@
 -----------------------
 
 <h3 align="center">Como Instalar</h3>
-<p align="justify">Para realizar o uso desta API em seu computador, você precisará ter instalado o Node.js e o servidor de banco de dados MySQL, tendo-os funcionando corretamente. Preencha as variáveis de sistema no .env, retirando o .exemple, tornando-as assim ativas através da biblioteca dotenv pelo projeto. Antes de iniciar o projeto, instale as dependências com "npm install" e em seguida utilize o comando padrão "npm start". Há disponível, na pasta src/db, um arquivo para gerar um banco nos moldes do projeto.</p>
+<p align="justify">Para usar esta API, clone o repositório e, dentro dele, realize o npm install. Após isso, caso queira utilizar um servidor local mongoDB, mude env.example para apenas .env e insira a URL do mesmo e use o comando "npm run dev". Caso não tenha um servidor local, utiliza o comando "docker-compose up -d" para iniciar a API com um container docker de um servidor mongoDB.</p>
 
 -----------------------
 
@@ -60,6 +60,6 @@
 -----------------------
 
 <h3 align="center">How to Install</h3>
-<p align="justify">In order to use this API on your computer, you will need to have both Node.js and the MySQL database server installed, having them working properly. Fill in the system variables in the .env, removing the .example, thus making them active through the dotenv library by the project. Before starting the project, install the dependencies with "npm install" and then use the standard "npm start" command. There is available, in the src/db folder, a file to generate a database with the project's structure.</p>
+<p align="justify">To use this API, clone the repository and, inside its folder, run the npm install command. If you want to use a local mongoDB database, change "env.example" to .env and insert the correct URL, then use the command "npm run dev". If you don't have a local database, you can use the command "docker-compose up -d" to start the API with mongoDB database as a docker container.</p>
 
 -----------------------
