@@ -39,7 +39,7 @@
 
 **Used Knowledges**: Typescript.
 
-**Used Tools**: Node.js, JWT, Express and MySQ.
+**Used Tools**: Node.js, JWT, Express and MongoDB.
 
 **Number of People**: 1 (solo).
 
